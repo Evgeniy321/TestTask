@@ -7,15 +7,14 @@ let email = form.querySelector(".email")
 
 let ok = true
 let RegExpName = new RegExp("[А-Яа-я - ]+$")
-let RegPhone = new RegExp("\+[0-9\(\)- ]{11,}")
-let RegExpEmail = new RegExp("\w+@[A-Za-z]+?\.[A-Za-z]{2,6}")
+let RegExpPhone = new RegExp("[\\+ \\- 0-9 \\(\\)]{11,19}")
+let RegExpEmail = new RegExp("[A-Za-z\\.]+@[A-Za-z]+?\.[A-Za-z]{2,6}")
 
 function error(field){
     field.setAttribute("class","Error")
 }
 
 form.addEventListener("submit",function(event){
-    event.preventDefault()
     name.setAttribute("class","name")
     phone.setAttribute("class","phone")
     email.setAttribute("class","email")
